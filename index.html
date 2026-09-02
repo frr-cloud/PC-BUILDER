@@ -723,6 +723,487 @@
     setTimeout(() => { formMsg.textContent = ''; }, 5000);
   });
 </script>
+   
+<section class="informacion-hardware">
+  <style>
+    .informacion-hardware {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+      font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #1e2129;
+      line-height: 1.7;
+    }
 
-</body>
+    .informacion-hardware h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: #101218;
+      letter-spacing: -0.5px;
+    }
+
+    .informacion-hardware .subtitulo-intro {
+      font-size: 1.05rem;
+      color: #5a5f6d;
+      margin-bottom: 28px;
+      max-width: 780px;
+    }
+
+    .informacion-hardware h2 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-top: 56px;
+      margin-bottom: 18px;
+      color: #14151a;
+      border-left: 5px solid #4a6bff;
+      padding-left: 14px;
+    }
+
+    .informacion-hardware h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-top: 28px;
+      margin-bottom: 10px;
+      color: #1e2129;
+    }
+
+    .informacion-hardware p {
+      font-size: 1rem;
+      margin-bottom: 16px;
+      color: #33363f;
+    }
+
+    .informacion-hardware .intro-parrafos p {
+      font-size: 1.05rem;
+    }
+
+    /* Guía por presupuesto */
+    .guia-presupuestos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .tarjeta-presupuesto {
+      background: #f6f7fb;
+      border: 1px solid #e3e5ec;
+      border-radius: 14px;
+      padding: 22px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .tarjeta-presupuesto:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(20, 20, 40, 0.08);
+    }
+
+    .tarjeta-presupuesto .etiqueta {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    .etiqueta.entrada { background: #e6f4ea; color: #1e7a3e; }
+    .etiqueta.trabajo { background: #e8f0fe; color: #1a54c4; }
+    .etiqueta.gamer   { background: #fdeee6; color: #c5501a; }
+
+    .tarjeta-presupuesto h3 {
+      margin-top: 0;
+      font-size: 1.15rem;
+    }
+
+    .tarjeta-presupuesto ul {
+      margin: 10px 0 0 0;
+      padding-left: 20px;
+      font-size: 0.95rem;
+      color: #40434d;
+    }
+
+    .tarjeta-presupuesto ul li {
+      margin-bottom: 6px;
+    }
+
+    /* Pasos de compatibilidad */
+    .lista-pasos {
+      counter-reset: paso;
+      list-style: none;
+      padding: 0;
+      margin: 24px 0;
+    }
+
+    .lista-pasos li {
+      counter-increment: paso;
+      position: relative;
+      padding: 16px 20px 16px 56px;
+      margin-bottom: 14px;
+      background: #ffffff;
+      border: 1px solid #e6e7ee;
+      border-radius: 12px;
+    }
+
+    .lista-pasos li::before {
+      content: counter(paso);
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 28px;
+      height: 28px;
+      background: #4a6bff;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lista-pasos strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #101218;
+    }
+
+    /* FAQ */
+    .faq-item {
+      background: #f9f9fc;
+      border: 1px solid #e3e5ec;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      padding: 4px 20px;
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.02rem;
+      padding: 16px 0;
+      color: #16181f;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      font-size: 1.4rem;
+      color: #4a6bff;
+      margin-left: 12px;
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item[open] summary::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-item p {
+      padding-bottom: 18px;
+      margin: 0;
+      color: #40434d;
+    }
+
+    /* Glosario */
+    .glosario-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .glosario-item {
+      background: #fff;
+      border: 1px solid #e6e7ee;
+      border-left: 4px solid #4a6bff;
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+
+    .glosario-item dt {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #101218;
+      margin-bottom: 6px;
+    }
+
+    .glosario-item dd {
+      margin: 0;
+      font-size: 0.92rem;
+      color: #4b4e58;
+    }
+
+    .nota-final {
+      margin-top: 40px;
+      padding: 18px 22px;
+      background: #eef1ff;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      color: #2a2d3a;
+    }
+  </style>
+
+  <!-- 1. ENCABEZADO E INTRODUCCIÓN -->
+  <h1>Guía completa para armar tu PC: compatibilidad, componentes y presupuesto</h1>
+  <p class="subtitulo-intro">
+    Todo lo que necesitas saber antes de usar el configurador: cómo verificar la compatibilidad entre piezas,
+    qué componentes priorizar según tu presupuesto y las dudas más comunes al momento de armar un equipo desde cero.
+  </p>
+
+  <div class="intro-parrafos">
+    <p>
+      Armar una computadora desde cero es una de las formas más gratificantes de obtener el máximo rendimiento por
+      cada euro invertido, pero también es un proceso donde un pequeño error de compatibilidad puede arruinar toda
+      la compra. No basta con elegir los componentes más potentes del mercado: el procesador (CPU), la tarjeta
+      gráfica (GPU), la placa base y la fuente de poder deben funcionar como un sistema coordinado. Un procesador
+      Intel de última generación, por ejemplo, no encajará físicamente en una placa base diseñada para AMD, y una
+      tarjeta gráfica de alto consumo puede saturar una fuente de poder insuficiente, provocando apagones
+      inesperados o, en el peor de los casos, daños permanentes en el hardware.
+    </p>
+    <p>
+      La compatibilidad entre CPU y placa base depende principalmente del tipo de socket y del chipset. Cada
+      generación de procesadores utiliza un socket específico (por ejemplo, LGA1700 o AM5), y solo las placas base
+      diseñadas para ese socket permitirán instalar dicho procesador. A esto se suma la compatibilidad de memoria
+      RAM: no todas las placas base soportan DDR5, y mezclar módulos de distinta velocidad o generación puede
+      impedir que el sistema arranque correctamente. Por eso, nuestro configurador filtra automáticamente los
+      componentes compatibles entre sí, pero entender estos conceptos te ayudará a tomar decisiones más informadas
+      y a detectar cuellos de botella antes de finalizar tu compra.
+    </p>
+    <p>
+      Finalmente, la fuente de poder (PSU) es el componente que con más frecuencia se subestima. No se trata solo
+      de tener suficientes vatios disponibles, sino de contar con los conectores correctos (PCIe de 8 pines para
+      la GPU, conectores adicionales para procesadores de alto consumo) y una certificación de eficiencia adecuada
+      (80 Plus Bronze, Gold o Platinum) que garantice estabilidad bajo carga. Una fuente subdimensionada o de baja
+      calidad es una de las causas más comunes de reinicios aleatorios, inestabilidad y, en casos extremos,
+      cortocircuitos que dañan otros componentes. Esta guía busca darte el contexto técnico necesario para que cada
+      elección que hagas en el configurador tenga sentido dentro del conjunto completo de tu equipo.
+    </p>
+  </div>
+
+  <!-- 2. GUÍA PASO A PASO -->
+  <h2>Cómo elegir cada componente según tu presupuesto</h2>
+  <p>
+    No existe una configuración "perfecta" universal: la mejor combinación de componentes depende del uso que le
+    darás al equipo. A continuación te explicamos el proceso recomendado para elegir cada pieza y qué prioridades
+    debes tener según el perfil de tu PC.
+  </p>
+
+  <ol class="lista-pasos">
+    <li>
+      <strong>Define el uso principal del equipo</strong>
+      Antes de tocar el configurador, decide si tu PC será para gaming, trabajo de oficina/ofimática, edición de
+      contenido o una combinación de tareas. Esto determinará cuánto presupuesto destinar a la GPU frente al CPU.
+    </li>
+    <li>
+      <strong>Elige el procesador (CPU) como punto de partida</strong>
+      El CPU condiciona qué placas base y qué tipo de memoria RAM podrás usar. Para tareas de oficina, un procesador
+      de gama media es suficiente; para gaming o edición, conviene priorizar más núcleos y frecuencia alta.
+    </li>
+    <li>
+      <strong>Selecciona la placa base compatible</strong>
+      Verifica el socket y el chipset. Las placas base de gama alta ofrecen más puertos PCIe, mejor sistema de
+      alimentación (VRM) y soporte para memorias más rápidas, algo relevante si planeas actualizar el equipo a futuro.
+    </li>
+    <li>
+      <strong>Calcula la memoria RAM necesaria</strong>
+      16 GB es el estándar recomendado actualmente para gaming y multitarea ligera; 32 GB o más es preferible para
+      edición de vídeo, virtualización o cargas de trabajo profesionales exigentes.
+    </li>
+    <li>
+      <strong>Escoge la tarjeta gráfica (GPU) según resolución objetivo</strong>
+      Si planeas jugar en 1080p, una GPU de gama media es suficiente. Para 1440p o 4K, se necesita una GPU de gama
+      alta con suficiente memoria de vídeo (VRAM) para evitar cuellos de botella gráficos.
+    </li>
+    <li>
+      <strong>Dimensiona la fuente de poder con margen</strong>
+      Suma el consumo estimado de todos los componentes y añade un margen del 20-30% adicional para picos de
+      consumo y futuras ampliaciones, priorizando siempre una certificación 80 Plus Bronze o superior.
+    </li>
+    <li>
+      <strong>Revisa el almacenamiento y la refrigeración</strong>
+      Un SSD NVMe es hoy el estándar mínimo recomendado para el sistema operativo. Verifica también que la caja y
+      el sistema de refrigeración sean adecuados para el TDP del procesador y el tamaño de la GPU elegida.
+    </li>
+  </ol>
+
+  <div class="guia-presupuestos">
+    <div class="tarjeta-presupuesto">
+      <span class="etiqueta entrada">Presupuesto de entrada</span>
+      <h3>PC para tareas básicas y ofimática</h3>
+      <ul>
+        <li>Procesador de 4-6 núcleos de gama media-baja</li>
+        <li>8-16 GB de RAM DDR4 o DDR5 según plataforma</li>
+        <li>SSD NVMe de 256-512 GB como unidad principal</li>
+        <li>Gráficos integrados o GPU de entrada si se requiere</li>
+        <li>Fuente de poder de 450-500W con certificación básica</li>
+      </ul>
+    </div>
+    <div class="tarjeta-presupuesto">
+      <span class="etiqueta trabajo">Presupuesto de trabajo</span>
+      <h3>PC para productividad y creación de contenido</h3>
+      <ul>
+        <li>Procesador de 6-8 núcleos con buen rendimiento sostenido</li>
+        <li>32 GB de RAM para multitarea y programas pesados</li>
+        <li>SSD NVMe de 1 TB o más para proyectos grandes</li>
+        <li>GPU de gama media si se usa software de renderizado</li>
+        <li>Fuente de poder de 600-650W con buena eficiencia</li>
+      </ul>
+    </div>
+    <div class="tarjeta-presupuesto">
+      <span class="etiqueta gamer">Presupuesto gamer</span>
+      <h3>PC orientada a rendimiento en juegos</h3>
+      <ul>
+        <li>Procesador de gama alta con frecuencias elevadas</li>
+        <li>16-32 GB de RAM DDR5 en configuración dual channel</li>
+        <li>GPU de gama alta con suficiente VRAM para 1440p/4K</li>
+        <li>SSD NVMe rápido (PCIe 4.0 o 5.0) para tiempos de carga cortos</li>
+        <li>Fuente de poder de 750W o más, certificación Gold recomendada</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 3. FAQ -->
+  <h2>Preguntas frecuentes sobre compatibilidad y rendimiento</h2>
+
+  <details class="faq-item">
+    <summary>¿Qué es un cuello de botella (bottleneck) y cómo puedo evitarlo?</summary>
+    <p>
+      Un cuello de botella ocurre cuando un componente limita el rendimiento potencial de otro, impidiendo que el
+      sistema alcance su máximo desempeño. El caso más común es un procesador demasiado débil combinado con una
+      tarjeta gráfica muy potente: la GPU queda "esperando" instrucciones del CPU y no puede entregar todos los
+      fotogramas por segundo de los que sería capaz. También puede ocurrir a la inversa, con una GPU insuficiente
+      para un CPU de gama alta, o con RAM lenta que limita la velocidad de transferencia de datos entre componentes.
+      Para evitarlo, es recomendable equilibrar la gama de CPU y GPU (por ejemplo, evitar combinar un procesador de
+      entrada con una GPU de gama alta), verificar que la RAM funcione en modo dual channel y a la velocidad
+      soportada por la placa base, y asegurarse de que el almacenamiento no sea un mecanismo de disco duro
+      tradicional (HDD) si se buscan tiempos de carga rápidos. Nuestro configurador señala automáticamente posibles
+      desequilibrios entre CPU y GPU al momento de armar tu equipo.
+    </p>
+  </details>
+
+  <details class="faq-item">
+    <summary>¿Qué es el socket de un procesador y por qué es tan importante?</summary>
+    <p>
+      El socket es la interfaz física que conecta el procesador con la placa base. Cada familia de procesadores
+      utiliza un tipo de socket específico definido por el fabricante: por ejemplo, Intel utiliza actualmente el
+      socket LGA1700 para varias generaciones de procesadores de escritorio, mientras que AMD emplea el socket AM5
+      para su línea más reciente. Un procesador diseñado para un socket determinado físicamente no encajará en una
+      placa base con un socket distinto, sin importar cuánto se intente forzar la instalación. Además del ajuste
+      físico, el socket determina qué chipset y qué generación de memoria RAM son compatibles, por lo que verificar
+      esta correspondencia es el primer filtro obligatorio antes de comprar cualquier CPU o placa base. Comprar
+      ambos componentes de forma conjunta y verificada evita uno de los errores más costosos y frecuentes al armar
+      una PC desde cero.
+    </p>
+  </details>
+
+  <details class="faq-item">
+    <summary>¿Cómo calculo la potencia de fuente de alimentación que necesito?</summary>
+    <p>
+      El cálculo de potencia se basa en sumar el consumo estimado de cada componente bajo carga máxima: procesador,
+      tarjeta gráfica, placa base, almacenamiento, memoria RAM y ventiladores adicionales. La tarjeta gráfica suele
+      ser el componente que más energía consume, seguida del procesador. Una vez obtenida esta suma aproximada, se
+      recomienda añadir un margen de seguridad de entre el 20% y el 30%, ya que las fuentes de poder alcanzan su
+      mayor eficiencia energética cuando trabajan entre el 50% y el 80% de su capacidad total, y este margen también
+      permite absorber picos de consumo instantáneos sin comprometer la estabilidad del sistema. Por ejemplo, si el
+      consumo estimado total es de 450W, una fuente de 550W a 650W sería una elección más segura y eficiente que una
+      fuente ajustada exactamente al límite. Nuestro configurador realiza este cálculo automáticamente al seleccionar
+      tus componentes.
+    </p>
+  </details>
+
+  <details class="faq-item">
+    <summary>¿Es lo mismo la certificación 80 Plus Bronze, Gold y Platinum?</summary>
+    <p>
+      No, estas certificaciones indican distintos niveles de eficiencia energética de la fuente de poder, es decir,
+      qué porcentaje de la electricidad consumida de la red eléctrica se convierte realmente en energía utilizable
+      para el sistema (el resto se pierde en forma de calor). La certificación Bronze garantiza una eficiencia
+      mínima aceptable para equipos convencionales, la Gold ofrece una eficiencia notablemente superior y suele ser
+      el estándar recomendado para equipos gamer o de trabajo intensivo, mientras que Platinum y Titanium representan
+      los niveles más altos, generalmente reservados para equipos de alto rendimiento o servidores donde el consumo
+      eléctrico sostenido es una preocupación relevante. Una fuente con mejor certificación no solo reduce el
+      consumo eléctrico a largo plazo, sino que suele tener componentes internos de mayor calidad, lo que se traduce
+      en mayor estabilidad y una vida útil más larga.
+    </p>
+  </details>
+
+  <details class="faq-item">
+    <summary>¿Puedo mezclar componentes de distintas generaciones o marcas?</summary>
+    <p>
+      Depende del tipo de componente. CPU y placa base deben coincidir en socket y chipset, por lo que no es posible
+      mezclar libremente generaciones de un mismo fabricante sin verificar la compatibilidad exacta, y mucho menos
+      combinar marcas distintas como Intel y AMD en la misma placa base. La memoria RAM, aunque físicamente pueda
+      encajar en algunos casos, debe coincidir en tipo (DDR4 o DDR5) con lo que soporta la placa base; mezclar
+      módulos de distinta velocidad o capacidad puede funcionar, pero el sistema operará a la velocidad del módulo
+      más lento y puede generar inestabilidad si las diferencias son muy grandes. La tarjeta gráfica y el
+      almacenamiento, en cambio, son mucho más flexibles: una GPU de cualquier marca funcionará siempre que exista
+      un puerto PCIe disponible y la fuente de poder entregue suficiente energía, y lo mismo ocurre con las unidades
+      de almacenamiento SATA o NVMe, siempre que la placa base cuente con los puertos correspondientes.
+    </p>
+  </details>
+
+  <!-- 4. GLOSARIO -->
+  <h2>Glosario técnico de hardware</h2>
+  <p>Términos clave que encontrarás al configurar tu equipo y que te ayudarán a entender las especificaciones de cada componente.</p>
+
+  <dl class="glosario-grid">
+    <div class="glosario-item">
+      <dt>DDR5</dt>
+      <dd>
+        Quinta generación de memoria RAM de doble tasa de datos. Ofrece mayores velocidades de transferencia y
+        menor consumo energético que su predecesora DDR4, aunque requiere una placa base y un procesador compatibles
+        con este estándar.
+      </dd>
+    </div>
+    <div class="glosario-item">
+      <dt>PCIe 4.0 / 5.0</dt>
+      <dd>
+        Estándar de bus de expansión utilizado para conectar tarjetas gráficas, unidades de almacenamiento NVMe y
+        otros periféricos internos. Cada nueva versión (de 4.0 a 5.0) duplica el ancho de banda disponible,
+        permitiendo transferencias de datos más rápidas entre componentes.
+      </dd>
+    </div>
+    <div class="glosario-item">
+      <dt>NVMe</dt>
+      <dd>
+        Protocolo de comunicación diseñado para unidades de almacenamiento de estado sólido conectadas por PCIe.
+        Ofrece velocidades de lectura y escritura muy superiores a las unidades SATA tradicionales, reduciendo
+        drásticamente los tiempos de carga del sistema y las aplicaciones.
+      </dd>
+    </div>
+    <div class="glosario-item">
+      <dt>TDP (Thermal Design Power)</dt>
+      <dd>
+        Indica la cantidad de calor, medida en vatios, que un componente (generalmente CPU o GPU) puede disipar bajo
+        condiciones normales de funcionamiento. Sirve como referencia para elegir un sistema de refrigeración
+        adecuado y estimar el consumo energético aproximado.
+      </dd>
+    </div>
+    <div class="glosario-item">
+      <dt>ATX</dt>
+      <dd>
+        Estándar de formato de placa base y caja más extendido en PCs de escritorio, que define dimensiones,
+        distribución de puertos y compatibilidad con fuentes de poder. Existen variantes como Micro-ATX y Mini-ITX,
+        de menor tamaño pero con menos slots de expansión disponibles.
+      </dd>
+    </div>
+  </dl>
+
+  <p class="nota-final">
+    <strong>Consejo final:</strong> utiliza el configurador de arriba para armar tu equipo pieza por pieza; el
+    sistema validará automáticamente la compatibilidad de socket, tipo de memoria y potencia recomendada de fuente
+    de poder según los componentes que selecciones.
+  </p>
+</section>
+</body>  
 </html>
