@@ -2,11 +2,93 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Glosario - Silicon Forge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glosario de Términos Hardware - Silicon Forge</title>
+    <meta name="description" content="Diccionario completo con los términos técnicos más importantes sobre componentes informáticos y montaje de PC.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0c10;
+            --bg-2: #0e1117;
+            --surface: #12151c;
+            --card: #161b24;
+            --border: #242a35;
+            --text: #eef1f6;
+            --text-dim: #97a1b0;
+            --hot: #ff6b35;
+            --cool: #3ddcef;
+            --radius-m: 16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        a { color: inherit; text-decoration: none; }
+        
+        header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--text); }
+        .logo span { color: var(--hot); }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+        .nav-links a:hover { color: var(--hot); }
+
+        main { max-width: 900px; margin: 3rem auto; padding: 0 1.5rem; }
+        h1 { font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; margin-bottom: 1rem; color: var(--text); }
+        .intro { font-size: 1.1rem; color: var(--text-dim); margin-bottom: 2.5rem; }
+
+        .term-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-m); padding: 1.5rem 2rem; margin-bottom: 1.5rem; }
+        .term-card h3 { font-family: 'Space Grotesk', sans-serif; color: var(--hot); margin-bottom: 0.5rem; font-size: 1.3rem; }
+        .term-card p { color: var(--text-dim); }
+
+        footer { background: var(--bg-2); border-top: 1px solid var(--border); padding: 3rem 2rem; margin-top: 4rem; text-align: center; color: var(--text-dim); font-size: 0.9rem; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; list-style: none; margin-bottom: 1.5rem; }
+    </style>
 </head>
 <body>
-    <h1>Glosario Hardware</h1>
-    <p>Contenido en construcción...</p>
-    <p><a href="index.html">Volver al inicio</a></p>
+
+    <header>
+        <a href="index.html" class="logo">SILICON<span>FORGE</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="guia-compatibilidad.html">Guía Compatibilidad</a></li>
+            <li><a href="preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
+            <li><a href="glosario.html">Glosario</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <h1>Glosario de Hardware</h1>
+        <p class="intro">Conceptos clave explicados de forma sencilla para entender las especificaciones técnicas.</p>
+
+        <div class="term-card">
+            <h3>BIOS / UEFI</h3>
+            <p>Sistema básico de entrada/salida almacenado en la placa base que se encarga de inicializar el hardware al encender el equipo y cargar el sistema operativo.</p>
+        </div>
+
+        <div class="term-card">
+            <h3>TDP (Thermal Design Power)</h3>
+            <p>Medida expresada en vatios (W) que representa la cantidad máxima de calor que genera un componente y que el sistema de refrigeración debe ser capaz de disipar.</p>
+        </div>
+
+        <div class="term-card">
+            <h3>PCIe (Peripheral Component Interconnect Express)</h3>
+            <p>Bus de expansión de alta velocidad utilizado para conectar tarjetas gráficas, unidades SSD NVMe y otras tarjetas adicionales a la placa base.</p>
+        </div>
+
+        <div class="term-card">
+            <h3>VRM (Voltage Regulator Module)</h3>
+            <p>Circuito en la placa base encargado de regular y limpiar el voltaje que recibe el procesador desde la fuente de alimentación para garantizar su estabilidad.</p>
+        </div>
+    </main>
+
+    <footer>
+        <ul class="footer-links">
+            <li><a href="guia-compatibilidad.html">Guía de Compatibilidad</a></li>
+            <li><a href="preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
+            <li><a href="glosario.html">Glosario Hardware</a></li>
+        </ul>
+        <p>&copy; 2026 Silicon Forge. Todos los derechos reservados.</p>
+    </footer>
+
 </body>
 </html>
