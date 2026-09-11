@@ -2,11 +2,110 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Guía de Compatibilidad - Silicon Forge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Compatibilidad de Componentes PC - Silicon Forge</title>
+    <meta name="description" content="Aprende a verificar la compatibilidad entre procesador, placa base, RAM, tarjeta gráfica, fuente de alimentación y caja para montar tu PC.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0c10;
+            --bg-2: #0e1117;
+            --surface: #12151c;
+            --card: #161b24;
+            --border: #242a35;
+            --text: #eef1f6;
+            --text-dim: #97a1b0;
+            --hot: #ff6b35;
+            --cool: #3ddcef;
+            --radius-m: 16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        a { color: inherit; text-decoration: none; }
+        
+        header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--text); }
+        .logo span { color: var(--hot); }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+        .nav-links a:hover { color: var(--hot); }
+
+        main { max-width: 900px; margin: 3rem auto; padding: 0 1.5rem; }
+        h1 { font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; margin-bottom: 1rem; color: var(--text); }
+        .intro { font-size: 1.1rem; color: var(--text-dim); margin-bottom: 2.5rem; }
+
+        .guide-section { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-m); padding: 2rem; margin-bottom: 2rem; }
+        .guide-section h2 { font-family: 'Space Grotesk', sans-serif; color: var(--cool); margin-bottom: 1rem; font-size: 1.5rem; }
+        .guide-section ul { margin-left: 1.2rem; margin-top: 0.5rem; color: var(--text-dim); }
+        .guide-section li { margin-bottom: 0.5rem; }
+
+        footer { background: var(--bg-2); border-top: 1px solid var(--border); padding: 3rem 2rem; margin-top: 4rem; text-align: center; color: var(--text-dim); font-size: 0.9rem; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; list-style: none; margin-bottom: 1.5rem; }
+    </style>
 </head>
 <body>
-    <h1>Guía de Compatibilidad de Componentes</h1>
-    <p>Contenido en construcción...</p>
-    <p><a href="index.html">Volver al inicio</a></p>
+
+    <header>
+        <a href="index.html" class="logo">SILICON<span>FORGE</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="guia-compatibilidad.html">Guía Compatibilidad</a></li>
+            <li><a href="preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
+            <li><a href="glosario.html">Glosario</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <h1>Guía de Compatibilidad de Componentes</h1>
+        <p class="intro">Evita errores al elegir los componentes para tu PC. Sigue estas verificaciones clave antes de comprar cualquier pieza.</p>
+
+        <article class="guide-section">
+            <h2>1. Procesador (CPU) y Placa Base</h2>
+            <p>El procesador debe encajar perfectamente en el socket de la placa base y ser compatible con su chipset:</p>
+            <ul>
+                <li><strong>Socket:</strong> Asegúrate de que coincida (ejemplo: AM5 para AMD Ryzen serie 7000/9000, LGA1700 para Intel 12ª/13ª/14ª Gen).</li>
+                <li><strong>Versión de BIOS:</strong> Algunas placas requieren actualizar la BIOS para reconocer procesadores más recientes.</li>
+            </ul>
+        </article>
+
+        <article class="guide-section">
+            <h2>2. Memoria RAM</h2>
+            <p>La memoria RAM debe coincidir con el tipo soportado por la placa base y el procesador:</p>
+            <ul>
+                <li><strong>Tecnología:</strong> DDR4 y DDR5 no son compatibles entre sí (tienen diferentes muescas físicas).</li>
+                <li><strong>Velocidad y Perfiles:</strong> Revisa la velocidad máxima soportada (XMP para Intel / EXPO para AMD).</li>
+            </ul>
+        </article>
+
+        <article class="guide-section">
+            <h2>3. Tarjeta Gráfica (GPU) y Caja (Chasis)</h2>
+            <p>Garantiza que la GPU quepa físicamente dentro del chasis seleccionado:</p>
+            <ul>
+                <li><strong>Longitud de la GPU:</strong> Compara la longitud máxima admitida por la caja con el tamaño de la tarjeta gráfica en milímetros.</li>
+                <li><strong>Ranuras de expansión:</strong> Tarjetas de 3 o más slots requieren cajas con suficiente espacio vertical.</li>
+            </ul>
+        </article>
+
+        <article class="guide-section">
+            <h2>4. Fuente de Alimentación (PSU)</h2>
+            <p>Proporciona la potencia eléctrica suficiente a todo el sistema:</p>
+            <ul>
+                <li><strong>Vataje estimado:</strong> Suma el consumo total (TDP) de CPU y GPU y añade al menos un 20% extra de margen.</li>
+                <li><strong>Conectores GPU:</strong> Gráficas modernas como la serie RTX 40 requieren conectores 12VHPWR / PCIe Gen 5.</li>
+            </ul>
+        </article>
+    </main>
+
+    <footer>
+        <ul class="footer-links">
+            <li><a href="guia-compatibilidad.html">Guía de Compatibilidad</a></li>
+            <li><a href="preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
+            <li><a href="glosario.html">Glosario Hardware</a></li>
+        </ul>
+        <p>&copy; 2026 Silicon Forge. Todos los derechos reservados.</p>
+    </footer>
+
 </body>
 </html>
