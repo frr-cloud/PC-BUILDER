@@ -188,7 +188,6 @@
   .hero-badges .num{font-family:'JetBrains Mono',monospace; font-size:1.5rem; font-weight:600; color:var(--text);}
   .hero-badges .lbl{font-size:.8rem; color:var(--text-faint);}
 
-  /* Signature: bench readout panel */
   .readout{
     background:linear-gradient(180deg,var(--surface),var(--bg-2));
     border:1px solid var(--border);
@@ -624,105 +623,114 @@
         <a href="#inicio" class="logo"><span class="logo-mark"></span>SILICON<span>FORGE</span></a>
         <p>PCs a medida, ensamblados a mano en nuestro taller desde 2016.</p>
         <div class="socials" style="margin-top:20px;">
-          <a href="#" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.21.6 1.76 1.15.5.5.9 1.1 1.15 1.76.25.64.42 1.37.47 2.43.05 1.06.06 1.42.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43-.26.66-.6 1.21-1.15 1.76-.5.5-1.1.9-1.76 1.15-.64.25-1.37.42-2.43.47-1.06.05-1.42.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.76-1.15 4.9 4.9 0 0 1-1.15-1.76c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.7 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.21 1.15-1.76A4.9 4.9 0 0 1 5.44 2.53c.64-.25 1.37-.42 2.43-.47C8.94 2.01 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg></a>
-          <a href="#" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24"><path d="M22 8.4s-.2-1.5-.8-2.2c-.8-.9-1.7-.9-2.1-1C16 5 12 5 12 5s-4 0-7.1.2c-.4 0-1.3.1-2.1 1-.6.7-.8 2.2-.8 2.2S2 10.2 2 12v1.6c0 1.8.2 3.6.2 3.6s.2 1.5.8 2.2c.8.9 1.9.9 2.4 1C7.3 20.5 12 20.6 12 20.6s4 0 7.1-.3c.4 0 1.3-.1 2.1-1 .6-.7.8-2.2.8-2.2s.2-1.8.2-3.6V12c0-1.8-.2-3.6-.2-3.6zM9.9 15.5V9.4l5.6 3.1-5.6 3z"/></svg></a>
-          <a href="#" aria-label="X" title="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7l-5.5-7.2L4.5 22H1.4l8.1-9.3L1 2h7.2l5 6.6L18.9 2zm-1.2 18h1.7L7 3.9H5.2L17.7 20z"/></svg></a>
-          <a href="#" aria-label="Discord" title="Discord"><svg viewBox="0 0 24 24"><path d="M20 5.5A17.3 17.3 0 0 0 15.6 4l-.3.6a12.9 12.9 0 0 1 3.7 1.4A15 15 0 0 0 12 5c-2.5 0-5 .6-7 1.9A12.9 12.9 0 0 1 8.7 4.6L8.4 4A17.3 17.3 0 0 0 4 5.5C1.9 9 1.3 12.4 1.5 15.7A17.6 17.6 0 0 0 7 18.5l.8-1.3a11 11 0 0 1-1.8-.9l.4-.3a12.4 12.4 0 0 0 11.2 0l.4.3c-.6.4-1.2.6-1.8.9l.8 1.3a17.6 17.6 0 0 0 5.5-2.8c.3-3.9-.6-7.3-2.5-10.2zM9.3 14.3c-.8 0-1.4-.7-1.4-1.6s.6-1.6 1.4-1.6 1.4.7 1.4 1.6-.6 1.6-1.4 1.6zm5.4 0c-.8 0-1.4-.7-1.4-1.6s.6-1.6 1.4-1.6 1.4.7 1.4 1.6-.6 1.6-1.4 1.6z"/></svg></a>
+          <a href="#" aria-label="Instagram" title="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.21.6 1.76 1.15.5.5.9 1.1 1.15 1.76.25.64.42 1.37.47 2.43.05 1.06.06 1.42.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43-.26.66-.6 1.21-1.15 1.76-.5.5-1.1.9-1.76 1.15-.64.25-1.37.42-2.43.47-1.06.05-1.42.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.76-1.15 4.9 4.9 0 0 1-1.15-1.76c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.7 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.21 1.15-1.76A4.9 4.9 0 0 1 5.44 2.53c.64-.25 1.37-.42 2.43-.47C8.94 2.01 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
+          </a>
         </div>
       </div>
+      
       <div class="foot-col">
         <h4>Navegación</h4>
         <ul>
           <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#nosotros">Sobre nosotros</a></li>
           <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#nosotros">Sobre nosotros</a></li>
           <li><a href="#proceso">Proceso</a></li>
         </ul>
       </div>
+
       <div class="foot-col">
-        <h4>Guias y Hardware</h4>
+        <h4>Guías y Recursos</h4>
         <ul>
-          <li><a href="compatibilidad-componentes-pc.html">Guía de compatibilidad</a></li>
-          <li><a href="preguntas-frecuentes-hardware.html">Preguntas frecuentes</a></li>
-          <li><a href="glosario-hardware.html">Glosario de términos</a></li>
+          <li><a href="compatibilidad-componentes-pc.html">Guía de Compatibilidad</a></li>
+          <li><a href="preguntas-frecuentes-hardware.html">Preguntas Frecuentes</a></li>
+          <li><a href="glosario-hardware.html">Glosario Hardware</a></li>
         </ul>
       </div>
+
       <div class="foot-col">
         <h4>Contacto</h4>
         <ul>
-          <li><a href="mailto:hola@siliconforge.example">hola@siliconforge.example</a></li>
-          <li><a href="tel:+34900000000">+34 900 000 000</a></li>
-          <li><a href="#contacto">Calle del Taller 12, Madrid</a></li>
+          <li><a href="#contacto">Solicitar presupuesto</a></li>
+          <li><a href="mailto:info@builderpc.xyz">info@builderpc.xyz</a></li>
         </ul>
       </div>
     </div>
+
     <div class="foot-bottom">
-      <span>© 2026 Silicon Forge. Todos los derechos reservados. | <a href="privacidad.html">Política de Privacidad</a> | <a href="contacto.html">Contacto</a> | <a href="terminos.html">Términos y Condiciones</a></span>
-      <span>Diseñado y ensamblado con cuidado en nuestro taller.</span>
+      <p>&copy; 2026 Silicon Forge. Todos los derechos reservados.</p>
+      <div>
+        <a href="#">Aviso Legal</a> · 
+        <a href="#">Privacidad</a>
+      </div>
     </div>
   </div>
 </footer>
 
 <script>
+  // Menu burger
+  const burgerBtn = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  
+  if (burgerBtn && navLinks) {
+    burgerBtn.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      burgerBtn.classList.toggle('open');
+      burgerBtn.setAttribute('aria-expanded', isOpen);
+    });
+  }
+
   // Header background on scroll
   const header = document.getElementById('siteHeader');
-  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 20);
-  document.addEventListener('scroll', onScroll, { passive:true });
-  onScroll();
-
-  // Mobile menu
-  const burger = document.getElementById('burgerBtn');
-  const navLinks = document.getElementById('navLinks');
-  burger.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
-    burger.classList.toggle('open', isOpen);
-    burger.setAttribute('aria-expanded', isOpen);
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
   });
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    burger.classList.remove('open');
-    burger.setAttribute('aria-expanded', 'false');
-  }));
 
-  // Scroll reveal
-  const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
-  const io = new IntersectionObserver((entries) => {
+  // Reveal elements on scroll
+  const observerOptions = { threshold: 0.15 };
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
-        io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15 });
-  revealEls.forEach(el => io.observe(el));
+  }, observerOptions);
 
-  // Animated counters (hero readout)
-  function animateCounter(el) {
-    const target = parseInt(el.dataset.target, 10);
-    const duration = 1400;
-    const start = performance.now();
-    function tick(now) {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.round(eased * target);
-      if (progress < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  }
-  window.addEventListener('load', () => {
-    document.querySelectorAll('.counter').forEach(animateCounter);
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
+
+  // Counter animations
+  const counters = document.querySelectorAll('.counter');
+  counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    let count = 0;
+    const speed = target / 30;
+    const updateCount = () => {
+      count += speed;
+      if (count < target) {
+        counter.innerText = Math.ceil(count);
+        setTimeout(updateCount, 40);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    updateCount();
   });
 
-  // Contact form (client-side only demo)
-  const form = document.getElementById('contactForm');
+  // Form mock submission
+  const contactForm = document.getElementById('contactForm');
   const formMsg = document.getElementById('formMsg');
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    formMsg.textContent = '✓ Solicitud enviada. Te contactaremos en menos de 24h.';
-    form.reset();
-    setTimeout(() => { formMsg.textContent = ''; }, 5000);
-  });
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      formMsg.textContent = "Mensaje enviado con éxito. Te responderemos pronto.";
+      contactForm.reset();
+    });
+  }
 </script>
 
-</body>  
+</body>
 </html>
